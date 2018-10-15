@@ -7,26 +7,16 @@
 
 // GITHUB --> https://github.com/snowplow/snowplow/wiki/integrating-javascript-tags-onto-your-website
 
-// grab the key from a url
-var paramFound = document.location.search.split('test=')[1] || false;
-
-if (paramFound) {
-
-var cleanParam = paramFound.split('&')[0];
 
 ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
 p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
 };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
 n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d1fc8wv8zag5ca.cloudfront.net/2.6.2/sp.js","snowplow"));
 
-window.snowplow('newTracker', 'cf', cleanParam + '.ngrok.io', { // Initialise a tracker
+window.snowplow('newTracker', 'cf', 'd2vsxzu3h27jc3.cloudfront.net', { // Initialise a tracker
   appId: 'adsk-snowploc-poc',
   cookieDomain: 'localhost'
 });
-
-} else {
-	alert("need a param of TEST with the proxy key");
-}
 
 </script>
 <!-- Snowplow stops plowing -->	
@@ -39,8 +29,6 @@ window.snowplow('newTracker', 'cf', cleanParam + '.ngrok.io', { // Initialise a 
 <a href="#link" id="link">Basic Link Text</a>
 
 <script>
-
-if (paramFound) {
 
 // Page View
 window.snowplow('trackPageView');
@@ -71,8 +59,6 @@ document.getElementById('link').addEventListener('click', function(e){
 	*/
 
 });
-
-}
 
 </script>
 
